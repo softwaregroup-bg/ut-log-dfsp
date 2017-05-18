@@ -1,3 +1,13 @@
+<a name="5.0.2"></a>
+## [5.0.2](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.1...v5.0.2) (2017-05-18)
+
+
+### Bug Fixes
+
+* refactor logs and add timer metrics ([b136012](https://github.com/softwaregroup-bg/ut-log-dfsp/commit/b136012))
+
+
+
 <a name="5.0.1"></a>
 ## 5.0.1 (2017-05-15)
 
