@@ -1,6 +1,6 @@
 {
   "name": "ut-log-dfsp",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "dependencies": {
     "through2": "^2.0.3"
   },
