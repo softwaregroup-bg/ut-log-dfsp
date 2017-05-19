@@ -13,6 +13,7 @@ module.exports = function(config) {
         var stringified;
         var $meta;
         var method;
+        var l1pTraceId;
         try {
             if (typeof chunk === 'string') {
                 parsed = JSON.parse(chunk);
@@ -30,16 +31,17 @@ module.exports = function(config) {
                 return callback();
             }
             this.push(parsed.time + ' ' + levels[parsed.level]);
-            if($meta['L1p-Trace-Id']) {
-                this.push(' L1p-Trace-Id=' + $meta['L1p-Trace-Id']);
+            l1pTraceId = $meta['L1p-Trace-Id'] || ($meta.requestHeaders && $meta.requestHeaders['L1p-Trace-Id']);
+            if (l1pTraceId) {
+                this.push(' L1p-Trace-Id=' + l1pTraceId);
             }
-            if($meta.mtid) {
+            if ($meta.mtid) {
                 this.push(' mtid=' + $meta.mtid);
             }
             this.push(' method=' + method + ' payload=' + stringified);
             if (config.metrics && $meta.timeTaken) {
                 this.push('\n' + parsed.time + ' ' + levels[parsed.level]);
-                this.push(' L1P_METRIC_TIMER:[' + method + '][' + $meta.timeTaken + ']')
+                this.push(' L1P_METRIC_TIMER:[' + method + '][' + $meta.timeTaken + ']');
             }
             callback();
         } catch (e) {
