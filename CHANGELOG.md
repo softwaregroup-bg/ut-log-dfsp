@@ -1,3 +1,13 @@
+<a name="5.0.3"></a>
+## [5.0.3](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.2...v5.0.3) (2017-05-19)
+
+
+### Bug Fixes
+
+* pass l1p-trace-id if exists in ([30d9d60](https://github.com/softwaregroup-bg/ut-log-dfsp/commit/30d9d60))
+
+
+
 <a name="5.0.2"></a>
 ## [5.0.2](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.1...v5.0.2) (2017-05-18)
 
