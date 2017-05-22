@@ -1,3 +1,8 @@
+<a name="5.0.4"></a>
+## [5.0.4](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.3...v5.0.4) (2017-05-22)
+
+
+
 <a name="5.0.3"></a>
 ## [5.0.3](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.2...v5.0.3) (2017-05-19)
 
