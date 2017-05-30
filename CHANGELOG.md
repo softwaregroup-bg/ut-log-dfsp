@@ -1,3 +1,13 @@
+<a name="5.0.10"></a>
+## [5.0.10](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.9...v5.0.10) (2017-05-30)
+
+
+### Bug Fixes
+
+* extract L1p-Trace-Id from headers ([950b802](https://github.com/softwaregroup-bg/ut-log-dfsp/commit/950b802))
+
+
+
 <a name="5.0.9"></a>
 ## [5.0.9](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.8...v5.0.9) (2017-05-22)
 
