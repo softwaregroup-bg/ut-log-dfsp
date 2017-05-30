@@ -1,3 +1,13 @@
+<a name="5.0.11"></a>
+## [5.0.11](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.10...v5.0.11) (2017-05-30)
+
+
+### Bug Fixes
+
+* more retries to fetch traceId information ([9936f10](https://github.com/softwaregroup-bg/ut-log-dfsp/commit/9936f10))
+
+
+
 <a name="5.0.10"></a>
 ## [5.0.10](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.9...v5.0.10) (2017-05-30)
 
