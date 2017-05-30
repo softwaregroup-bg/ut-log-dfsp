@@ -31,7 +31,9 @@ module.exports = function(config) {
                 return callback();
             }
             this.push(parsed.time + ' ' + levels[parsed.level]);
-            l1pTraceId = $meta['L1p-Trace-Id'] || ($meta.requestHeaders && $meta.requestHeaders['L1p-Trace-Id']);
+            l1pTraceId = $meta['L1p-Trace-Id'] ||
+                        ($meta.requestHeaders && $meta.requestHeaders['l1p-trace-id']) ||
+                        (parsed.headers && parsed.headers['L1p-Trace-Id']);
             if (l1pTraceId) {
                 this.push(' L1p-Trace-Id=' + l1pTraceId);
             }
