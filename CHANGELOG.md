@@ -1,3 +1,13 @@
+<a name="5.0.12"></a>
+## [5.0.12](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.11...v5.0.12) (2017-05-31)
+
+
+### Bug Fixes
+
+* set new line after metrics log ([ad18398](https://github.com/softwaregroup-bg/ut-log-dfsp/commit/ad18398))
+
+
+
 <a name="5.0.11"></a>
 ## [5.0.11](https://github.com/softwaregroup-bg/ut-log-dfsp/compare/v5.0.10...v5.0.11) (2017-05-30)
 
