@@ -22,34 +22,34 @@ module.exports = function(config) {
                 parsed = chunk;
                 stringified = JSON.stringify(chunk);
             }
-            $meta = parsed.$meta;
-            if (!$meta) {
-                return callback();
-            }
-            method = $meta.method || parsed.msg;
-            if (!method || skip[method]) {
-                return callback();
-            }
-            this.push(parsed.time + ' ' + levels[parsed.level]);
-            l1pTraceId = $meta['L1p-Trace-Id'] ||
-                        ($meta.requestHeaders && $meta.requestHeaders['l1p-trace-id']) ||
-                        (parsed.headers && parsed.headers['L1p-Trace-Id']) ||
-                        (parsed.message && parsed.message.headers && parsed.message.headers['L1p-Trace-Id']);
-            if (l1pTraceId) {
-                this.push(' L1p-Trace-Id=' + l1pTraceId);
-            }
-            if ($meta.mtid) {
-                this.push(' mtid=' + $meta.mtid);
-            }
-            this.push(' method=' + method + ' payload=' + stringified);
-            if (config.metrics && $meta.timeTaken) {
-                this.push('\n' + parsed.time + ' ' + levels[parsed.level]);
-                this.push(' L1P_METRIC_TIMER:[' + method + '][' + $meta.timeTaken + ']');
-            }
-            callback();
         } catch (e) {
-            callback(e);
+            parsed = {};
         }
+        $meta = parsed.$meta;
+        if (!$meta) {
+            return callback();
+        }
+        method = $meta.method || parsed.msg;
+        if (!method || skip[method]) {
+            return callback();
+        }
+        this.push(parsed.time + ' ' + levels[parsed.level]);
+        l1pTraceId = $meta['L1p-Trace-Id'] ||
+                    ($meta.requestHeaders && $meta.requestHeaders['l1p-trace-id']) ||
+                    (parsed.headers && parsed.headers['L1p-Trace-Id']) ||
+                    (parsed.message && parsed.message.headers && parsed.message.headers['L1p-Trace-Id']);
+        if (l1pTraceId) {
+            this.push(' L1p-Trace-Id=' + l1pTraceId);
+        }
+        if ($meta.mtid) {
+            this.push(' mtid=' + $meta.mtid);
+        }
+        this.push(' method=' + method + ' payload=' + stringified);
+        if (config.metrics && $meta.timeTaken) {
+            this.push('\n' + parsed.time + ' ' + levels[parsed.level]);
+            this.push(' L1P_METRIC_TIMER:[' + method + '][' + $meta.timeTaken + ']\n');
+        }
+        callback();
     });
     stream.pipe(process.stdout);
     return stream;
